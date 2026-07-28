@@ -66,7 +66,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Why AES-256-GCM & Argon2id?
+## Why AES-256-GCM & Argon2id?
 
 1. **AES-256-GCM (Authenticated Encryption):**
    - **Galois/Counter Mode (GCM)** ensures both data confidentiality and authenticity/integrity simultaneously.
@@ -102,7 +102,7 @@ pip install -e .
 
 ---
 
-## 🚀 Usage & CLI Commands
+## Usage & CLI Commands
 
 By default, UmayCrypt securely prompts for passwords using `getpass`. Passwords are never echoed to stdout or stored in history.
 
@@ -145,7 +145,7 @@ umay decrypt-text --message "𐰉𐰥𐰊𐰕𐰌𐰢𐰉..."
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 All cryptographic primitives, corrupted file scenarios, wrong password conditions, and Orkhon permutation logic can be verified using `pytest`:
 
