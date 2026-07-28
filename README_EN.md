@@ -3,7 +3,7 @@
   <img src="./assets/logo.png" alt="UmayCrypt Logo" width="280" style="border-radius: 12px; margin-bottom: 15px;" />
 
   # UMAY ANA 𐰶𐰼𐰃𐰯𐱃𐰆
-  ### *UmayCrypt — Data Encryption under the Protection of Goddess Umay*
+  ### *UmayCrypt — Data Encryption under the Protection of Guardian Spirit Umay*
   `𐰆𐰢𐰖 𐰀𐰣𐰀 𐰶𐰼𐰃𐰯𐱃𐰆 — 𐰋𐰀𐰼𐰃 𐱁𐰃𐰯𐰼𐰀𐰞𐰀𐰢𐰀 𐰀𐰺𐰀𐰲𐰃`
 
   [Türkçe](README.md) | [English](README_EN.md)
@@ -16,13 +16,13 @@
 
 ---
 
-**UmayCrypt** is a Command Line (CLI) encryption tool inspired by **Umay Ana**, the protective goddess in Turkic mythology. It relies on **AES-256-GCM** and **Argon2id** for genuine cryptographic security, enriched with a visual and obfuscation layer formatted in Old Turkic (Orkhon-Yenisei) runes.
+**UmayCrypt** is a Command Line (CLI) encryption tool inspired by **Umay Ana**, the protective guardian spirit in Turkic mythology. It relies on **AES-256-GCM** and **Argon2id** for genuine cryptographic security, enriched with a visual and obfuscation layer formatted in Old Turkic (Orkhon-Yenisei) runes.
 
 ---
 
 ## 🏛️ Mythological Background: Who is Umay Ana?
 
-In ancient Turkic mythology and beliefs, **Umay Ana** (Mother Umay) is the divine mother goddess who protects children, women, homes, and all living creatures from evil spirits and unseen threats. **UmayCrypt** brings this ancient protective philosophy into the digital age: sealing your sensitive data under a cryptographic armor to shield it from malicious eyes and unauthorized access.
+In ancient Turkic mythology and beliefs, **Umay Ana** (Mother Umay) is the sacred guardian spirit who protects children, women, homes, and all living creatures from evil spirits and unseen threats. **UmayCrypt** brings this ancient protective philosophy into the digital age: sealing your sensitive data under a cryptographic armor to shield it from malicious eyes and unauthorized access.
 
 ---
 

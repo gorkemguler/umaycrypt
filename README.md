@@ -16,13 +16,13 @@
 
 ---
 
-**UmayCrypt**, Türk mitolojisindeki koruyucu tanrıça **Umay Ana**'nın ruhundan ilham alan, gerçek kriptografik güvenliğini **AES-256-GCM** ve **Argon2id** algoritmalarından alan, Göktürk (Orhun-Yenisey) alfabesi motifiyle zenginleştirilmiş komut satırı şifreleme aracıdır.
+**UmayCrypt**, Türk mitolojisindeki koruyucu ruh **Umay Ana**'dan ilham alan, gerçek kriptografik güvenliğini **AES-256-GCM** ve **Argon2id** algoritmalarından alan, Göktürk (Orhun-Yenisey) alfabesi motifiyle zenginleştirilmiş komut satırı şifreleme aracıdır.
 
 ---
 
 ## 🏛️ Mitolojik Arka Plan: Umay Ana Kimdir?
 
-Eski Türk mitolojisinde ve inancında **Umay Ana**, çocukları, kadınları, evleri ve tüm canlıların soyunu kötü niyetli ruhlardan ve görünmez tehlikelerden koruyan ana tanrıçadır. **UmayCrypt**, bu koruyucu felsefeyi dijital çağa taşır: Verilerinizi "kötü niyetli gözlerden ve yetkisiz erişimlerden" korumak için yüksek kriptografik zırhla mühürler.
+Eski Türk mitolojisinde ve inancında **Umay Ana**, çocukları, kadınları, evleri ve tüm canlıların soyunu kötü niyetli ruhlardan ve görünmez tehlikelerden koruyan kutsal koruyucu ruhtur. **UmayCrypt**, bu koruyucu felsefeyi dijital çağa taşır: Verilerinizi "kötü niyetli gözlerden ve yetkisiz erişimlerden" korumak için yüksek kriptografik zırhla mühürler.
 
 ---
 
