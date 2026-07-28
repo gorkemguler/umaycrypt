@@ -140,9 +140,12 @@ umay decrypt --input secret_folder.umay --output ./restored_folder
 Encrypts text and prints directly to the terminal in Orkhon runes:
 
 ```bash
-umay encrypt-text --message "May Umay Ana protect our data!"
+umay encrypt-text --message 'May Umay Ana protect our data!'
 # Output: 𐰉𐰥𐰊𐰕𐰌𐰢𐰉𐰣𐰟𐰕𐰄𐰒𐰄𐰣𐰗𐰣𐰇𐰠𐰔𐰞𐰌𐰞𐰔𐰣𐰏𐰣...
 ```
+
+> [!TIP]
+> **zsh / macOS Terminal Tip:** When passing messages containing exclamation marks (`!`) or special characters, always enclose your string in **single quotes (`'...'`)** to prevent zsh history expansion (`dquote>` prompt).
 
 ### 5. Text Decryption
 Decrypts text written in Orkhon runes back to plaintext:

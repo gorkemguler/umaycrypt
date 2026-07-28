@@ -140,9 +140,12 @@ umay decrypt --input gizli_klasor.umay --output ./gizli_klasor_cozulen
 Metni doğrudan terminale Orhun alfabesiyle basar:
 
 ```bash
-umay encrypt-text --message "Umay Ana verilerimizi korusun!"
+umay encrypt-text --message 'Umay Ana verilerimizi korusun!'
 # Çıktı: 𐰉𐰥𐰊𐰕𐰌𐰢𐰉𐰣𐰟𐰕𐰄𐰒𐰄𐰣𐰗𐰣𐰇𐰠𐰔𐰞𐰌𐰞𐰔𐰣𐰏𐰣...
 ```
+
+> [!TIP]
+> **zsh / macOS Terminal İpucu:** İçinde ünlem işareti (`!`) veya özel karakter bulunan metinlerde zsh kabuğunun `dquote>` moduna geçmesini önlemek için metinleri her zaman **tek tırnak (`'...'`)** içine alın.
 
 ### 5. Metin Deşifre Etme
 Göktürkçe harflerden oluşan metni çözer:
