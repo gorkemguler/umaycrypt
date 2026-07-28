@@ -2,7 +2,7 @@
 
   <img src="./assets/logo.png" alt="UmayCrypt Logo" width="280" style="border-radius: 12px; margin-bottom: 15px;" />
 
-$${\color{lightblue}\text{# UMAY ANA}\space\text{𐰶𐰼𐰃𐰯𐱃𐰆}}$$
+  # UMAY ANA 𐰶𐰼𐰃𐰯𐱃𐰆
   ### *UmayCrypt — Umay Ana'nın Koruması Altında Veri Şifreleme*
   `𐰆𐰢𐰖 𐰀𐰣𐰀 𐰶𐰼𐰃𐰯𐱃𐰆 — 𐰋𐰀𐰼𐰃 𐱁𐰃𐰯𐰼𐰀𐰞𐰀𐰢𐰀 𐰀𐰺𐰀𐰲𐰃`
 
