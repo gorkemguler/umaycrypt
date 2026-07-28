@@ -28,18 +28,24 @@ def test_cli_encrypt_decrypt_text_subcommand(capsys):
     msg = "Umay Ana Mesajı"
     passw = "PassText2026"
 
-    # encrypt-text
+    # encrypt-text (--message flag)
     res_enc = main(["encrypt-text", "-m", msg, "-p", passw])
     assert res_enc == 0
     captured_enc = capsys.readouterr()
     orhun_output = captured_enc.out.strip()
     assert len(orhun_output) > 0
 
-    # decrypt-text
+    # decrypt-text (--message flag)
     res_dec = main(["decrypt-text", "-m", orhun_output, "-p", passw])
     assert res_dec == 0
     captured_dec = capsys.readouterr()
     assert captured_dec.out.strip() == msg
+
+    # decrypt-text (direct positional argument without --message)
+    res_dec_pos = main(["decrypt-text", orhun_output, "-p", passw])
+    assert res_dec_pos == 0
+    captured_dec_pos = capsys.readouterr()
+    assert captured_dec_pos.out.strip() == msg
 
 
 def test_cli_wrong_password_returns_exit_code_1(tmp_path):

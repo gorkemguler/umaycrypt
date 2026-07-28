@@ -190,7 +190,7 @@ def handle_decrypt(args: argparse.Namespace) -> int:
 
 def handle_encrypt_text(args: argparse.Namespace) -> int:
     """umay encrypt-text komutu işleyicisi."""
-    message = args.message
+    message = args.message or args.positional_message
     if message is None:
         if not sys.stdin.isatty():
             message = sys.stdin.read()
@@ -217,17 +217,15 @@ def handle_encrypt_text(args: argparse.Namespace) -> int:
 
 def handle_decrypt_text(args: argparse.Namespace) -> int:
     """umay decrypt-text komutu işleyicisi."""
-    orhun_text = None
+    orhun_text = args.message or args.positional_message
 
-    if args.input:
+    if not orhun_text and args.input:
         if not os.path.isfile(args.input):
             print(f"{COLOR_RED}❌ Hata: Dosya bulunamadı: {args.input}{COLOR_RESET}", file=sys.stderr)
             return 1
         with open(args.input, "r", encoding="utf-8") as f:
             orhun_text = f.read().strip()
-    elif args.message:
-        orhun_text = args.message
-    else:
+    elif not orhun_text:
         if not sys.stdin.isatty():
             orhun_text = sys.stdin.read().strip()
         else:
@@ -279,11 +277,13 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     # 3. encrypt-text
     p_enc_text = subparsers.add_parser("encrypt-text", help="Düz metni şifreleyip terminale Orhun harfleriyle basma")
+    p_enc_text.add_argument("positional_message", nargs="?", help="Şifrelenecek düz metin (opsiyonel)")
     p_enc_text.add_argument("--message", "-m", help="Şifrelenecek düz metin")
     p_enc_text.add_argument("--password", "-p", help="Şifreleme parolası")
 
     # 4. decrypt-text
     p_dec_text = subparsers.add_parser("decrypt-text", help="Orhun harfli metni deşifre edip terminale basma")
+    p_dec_text.add_argument("positional_message", nargs="?", help="Deşifre edilecek Orhun metni (opsiyonel)")
     p_dec_text.add_argument("--input", "-i", help="Orhun metnini içeren dosya")
     p_dec_text.add_argument("--message", "-m", help="Orhun metni dizgisi")
     p_dec_text.add_argument("--password", "-p", help="Deşifreleme parolası")
