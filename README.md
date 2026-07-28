@@ -151,7 +151,100 @@ umay encrypt-text --message 'Umay Ana verilerimizi korusun!'
 Göktürkçe harflerden oluşan metni çözer:
 
 ```bash
-umay decrypt-text --message "𐰉𐰥𐰊𐰕𐰌𐰢𐰉..."
+umay decrypt-text '𐰉𐰥𐰊𐰕𐰌𐰢𐰉...'
+```
+
+---
+
+## 🖥️ Terminal Ekran Görüntüleri ve Örnek Çalıştırmalar
+
+Aşağıda **UmayCrypt** komut satırı aracının farklı senaryolardaki gerçek terminal çalıştırma çıktıları yer almaktadır:
+
+### 1. UmayCrypt Başlığı ve Yardım Menüsü (`umay --help`)
+
+```text
+user@macbook ~ % umay
+
+ _   _ __  __    _   \ \ / /  ____ ____  \ \ / / ____ _____ 
+| | | |  \/  |  / \   \ V /  / ___|  _ \  \ V /|  _ \_   _|
+| | | | |\/| | / _ \   | |  | |   | |_) |  | | | |_) || |  
+| |_| | |  | |/ ___ \  | |  | |___|  _ <   | | |  __/ | |  
+ \___/|_|  |_/_/   \_\ |_|   \____|_| \_\  |_| |_|    |_|  
+    --- Umay Ana'nın Koruması Altında Veri Şifreleme ---
+
+usage: umay [-h] {encrypt,decrypt,encrypt-text,decrypt-text} ...
+
+UmayCrypt - Göktürk (Orhun-Yenisey) Motifli AES-256-GCM Şifreleme Aracı
+
+positional arguments:
+  {encrypt,decrypt,encrypt-text,decrypt-text}
+                        Kullanılabilir komutlar
+    encrypt             Dosya veya klasör şifreleme (.umay üretir)
+    decrypt             Şifreli .umay dosyasını veya klasörünü deşifre etme
+    encrypt-text        Düz metni şifreleyip terminale Orhun harfleriyle basma
+    decrypt-text        Orhun harfli metni deşifre edip terminale basma
+```
+
+### 2. Düz Metni Göktürkçeye Şifreleme (`umay encrypt-text`)
+
+```text
+user@macbook ~ % umay encrypt-text 'Umay Ana verilerimizi korusun!'
+🛡️  Anahtar Parolanızı Girin: 
+🛡️  Parolanızı Tekrar Girin: 
+
+𐰎𐰌𐰥𐰙𐰛𐰌𐰐𐰊𐰃𐰗𐰡𐰀𐰍𐰚𐰍𐰝𐰒𐰊𐰍𐰊𐰜𐰕𐰛𐰊𐰞𐰇𐰜𐰚𐰃𐰉𐰛𐰗𐰞𐰏𐰕𐰐𐰢𐰛𐰞𐰐𐰜𐰈𐰢𐰤𐰚𐰇𐰆𐰁𐰓𐰇𐰔𐰙𐰌𐰐𐰚𐰟𐰢𐰗𐰕𐰤𐰆𐰟𐰜𐰃𐰆𐰝𐰕𐰟𐰄𐰤𐰆𐰙𐰚𐰃𐰒𐰐𐰉𐰍𐰚𐰇𐰑𐰟𐰆𐰠𐰞𐰋𐰓𐰤𐰌𐰠𐰑𐰛𐰔𐰠𐰣𐰈𐰣𐰗𐰓𐰛𐰜𐰡𐰕𐰁𐰊𐰋𐰜𐰡𐰊𐰍𐰓𐰇𐰔𐰇𐰚𐰁𐰚𐰛𐰔𐰃𐰕𐰀𐰚𐰃𐰂𐰡𐰕𐰡𐰂𐰡𐰌𐰀𐰑𐰛𐰜𐰁𐰕𐰛𐰆𐰝𐰢𐰤𐰂𐰝𐰉𐰈𐰌𐰀𐰞𐰡
+```
+
+### 3. Göktürkçe Metni Deşifre Etme (`umay decrypt-text`)
+
+```text
+user@macbook ~ % umay decrypt-text '𐰎𐰌𐰥𐰙𐰛𐰌𐰐𐰊𐰃𐰗𐰡𐰀𐰍𐰚𐰍𐰝𐰒𐰊𐰍𐰊𐰜𐰕𐰛𐰊𐰞𐰇𐰜...'
+🛡️  Anahtar Parolanızı Girin: 
+
+Umay Ana verilerimizi korusun!
+```
+
+### 4. Dosya Şifreleme (`umay encrypt`)
+
+```text
+user@macbook ~ % umay encrypt --input resim.png --output resim.png.umay
+🛡️  Anahtar Parolanızı Girin: 
+🛡️  Parolanızı Tekrar Girin: 
+
+📄 Dosya okunuyor: resim.png
+🔐 AES-256-GCM + Argon2id ile şifreleniyor & Orhun motifine işleniyor...
+✨ Başarılı! Veri Umay Ana'nın koruması altında mühürlendi.
+📁 Çıktı Dosyası: resim.png.umay
+```
+
+### 5. Şifreli Dosyayı Deşifre Etme (`umay decrypt`)
+
+```text
+user@macbook ~ % umay decrypt --input resim.png.umay --output resim_cozulen.png
+🛡️  Anahtar Parolanızı Girin: 
+
+🔓 Orhun harfleri çözümleniyor & AES-256-GCM auth_tag doğrulanıyor...
+✨ Başarılı! Umay Ana'nın mühürü açıldı. Dosya oluşturuldu: resim_cozulen.png
+```
+
+### 6. Toplu Klasör Şifreleme ve Çıkarma (`umay encrypt` & `umay decrypt`)
+
+```text
+user@macbook ~ % umay encrypt --input ./gizli_klasor --output gizli_klasor.umay
+🛡️  Anahtar Parolanızı Girin: 
+🛡️  Parolanızı Tekrar Girin: 
+
+📦 Klasör arşivleniyor: ./gizli_klasor
+🔐 AES-256-GCM + Argon2id ile şifreleniyor & Orhun motifine işleniyor...
+✨ Başarılı! Veri Umay Ana'nın koruması altında mühürlendi.
+📁 Çıktı Dosyası: gizli_klasor.umay
+
+user@macbook ~ % umay decrypt --input gizli_klasor.umay --output ./klasor_cozulen
+🛡️  Anahtar Parolanızı Girin: 
+
+🔓 Orhun harfleri çözümleniyor & AES-256-GCM auth_tag doğrulanıyor...
+📂 Klasör arşivi ayıklanıyor: ./klasor_cozulen
+✨ Başarılı! Umay Ana'nın mühürü açıldı. Klasör çıkarıldı: ./klasor_cozulen
 ```
 
 ---

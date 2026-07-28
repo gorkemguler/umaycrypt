@@ -151,7 +151,100 @@ umay encrypt-text --message 'May Umay Ana protect our data!'
 Decrypts text written in Orkhon runes back to plaintext:
 
 ```bash
-umay decrypt-text --message "𐰉𐰥𐰊𐰕𐰌𐰢𐰉..."
+umay decrypt-text '𐰉𐰥𐰊𐰕𐰌𐰢𐰉...'
+```
+
+---
+
+## 🖥️ Terminal Output Demonstrations
+
+Below are actual terminal execution logs of **UmayCrypt** across various usage scenarios:
+
+### 1. Banner Header & Help Menu (`umay --help`)
+
+```text
+user@macbook ~ % umay
+
+ _   _ __  __    _   \ \ / /  ____ ____  \ \ / / ____ _____ 
+| | | |  \/  |  / \   \ V /  / ___|  _ \  \ V /|  _ \_   _|
+| | | | |\/| | / _ \   | |  | |   | |_) |  | | | |_) || |  
+| |_| | |  | |/ ___ \  | |  | |___|  _ <   | | |  __/ | |  
+ \___/|_|  |_/_/   \_\ |_|   \____|_| \_\  |_| |_|    |_|  
+    --- Umay Ana'nın Koruması Altında Veri Şifreleme ---
+
+usage: umay [-h] {encrypt,decrypt,encrypt-text,decrypt-text} ...
+
+UmayCrypt - Göktürk (Orhun-Yenisey) Motifli AES-256-GCM Şifreleme Aracı
+
+positional arguments:
+  {encrypt,decrypt,encrypt-text,decrypt-text}
+                        Kullanılabilir komutlar
+    encrypt             Dosya veya klasör şifreleme (.umay üretir)
+    decrypt             Şifreli .umay dosyasını veya klasörünü deşifre etme
+    encrypt-text        Düz metni şifreleyip terminale Orhun harfleriyle basma
+    decrypt-text        Orhun harfli metni deşifre edip terminale basma
+```
+
+### 2. Encrypting Plaintext to Orkhon Runes (`umay encrypt-text`)
+
+```text
+user@macbook ~ % umay encrypt-text 'May Umay Ana protect our data!'
+🛡️  Enter Key Password: 
+🛡️  Confirm Key Password: 
+
+𐰎𐰌𐰥𐰙𐰛𐰌𐰐𐰊𐰃𐰗𐰡𐰀𐰍𐰚𐰍𐰝𐰒𐰊𐰍𐰊𐰜𐰕𐰛𐰊𐰞𐰇𐰜𐰚𐰃𐰉𐰛𐰗𐰞𐰏𐰕𐰐𐰢𐰛𐰞𐰐𐰜𐰈𐰢𐰤𐰚𐰇𐰆𐰁𐰓𐰇𐰔𐰙𐰌𐰐𐰚𐰟𐰢𐰗𐰕𐰤𐰆𐰟𐰜𐰃𐰆𐰝𐰕𐰟𐰄𐰤𐰆𐰙𐰚𐰃𐰒𐰐𐰉𐰍𐰚𐰇𐰑𐰟𐰆𐰠𐰞𐰋𐰓𐰤𐰌𐰠𐰑𐰛𐰔𐰠𐰣𐰈𐰣𐰗𐰓𐰛𐰜𐰡𐰕𐰁𐰊𐰋𐰜𐰡𐰊𐰍𐰓𐰇𐰔𐰇𐰚𐰁𐰚𐰛𐰔𐰃𐰕𐰀𐰚𐰃𐰂𐰡𐰕𐰡𐰂𐰡𐰌𐰀𐰑𐰛𐰜𐰁𐰕𐰛𐰆𐰝𐰢𐰤𐰂𐰝𐰉𐰈𐰌𐰀𐰞𐰡
+```
+
+### 3. Decrypting Orkhon Runes to Plaintext (`umay decrypt-text`)
+
+```text
+user@macbook ~ % umay decrypt-text '𐰎𐰌𐰥𐰙𐰛𐰌𐰐𐰊𐰃𐰗𐰡𐰀𐰍𐰚𐰍𐰝𐰒𐰊𐰍𐰊𐰜𐰕𐰛𐰊𐰞𐰇𐰜...'
+🛡️  Enter Key Password: 
+
+May Umay Ana protect our data!
+```
+
+### 4. Encrypting a File (`umay encrypt`)
+
+```text
+user@macbook ~ % umay encrypt --input photo.png --output photo.png.umay
+🛡️  Enter Key Password: 
+🛡️  Confirm Key Password: 
+
+📄 Reading file: photo.png
+🔐 Encrypting with AES-256-GCM + Argon2id & encoding to Orkhon runes...
+✨ Success! Data sealed under the protection of Umay Ana.
+📁 Output file: photo.png.umay
+```
+
+### 5. Decrypting an Encrypted File (`umay decrypt`)
+
+```text
+user@macbook ~ % umay decrypt --input photo.png.umay --output photo_restored.png
+🛡️  Enter Key Password: 
+
+🔓 Decoding Orkhon runes & verifying AES-256-GCM auth_tag...
+✨ Success! Umay Ana's seal unsealed. Created file: photo_restored.png
+```
+
+### 6. Folder Batch Encryption & Extraction (`umay encrypt` & `umay decrypt`)
+
+```text
+user@macbook ~ % umay encrypt --input ./secret_folder --output secret_folder.umay
+🛡️  Enter Key Password: 
+🛡️  Confirm Key Password: 
+
+📦 Archiving folder: ./secret_folder
+🔐 Encrypting with AES-256-GCM + Argon2id & encoding to Orkhon runes...
+✨ Success! Data sealed under the protection of Umay Ana.
+📁 Output file: secret_folder.umay
+
+user@macbook ~ % umay decrypt --input secret_folder.umay --output ./extracted_folder
+🛡️  Enter Key Password: 
+
+🔓 Decoding Orkhon runes & verifying AES-256-GCM auth_tag...
+📂 Unpacking folder archive: ./extracted_folder
+✨ Success! Umay Ana's seal unsealed. Extracted directory: ./extracted_folder
 ```
 
 ---
