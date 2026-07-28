@@ -110,6 +110,24 @@ pip install -e .
 
 ---
 
+## ⌨️ Shell Tab Completion Setup
+
+You can enable auto-completion for `umay` subcommands (`encrypt`, `decrypt`, etc.), flags, and file paths when pressing the **Tab** key:
+
+### For macOS / zsh (One-Line Activation):
+```bash
+echo 'eval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
+```
+
+### For bash:
+```bash
+echo 'eval "$(register-python-argcomplete umay)"' >> ~/.bashrc && source ~/.bashrc
+```
+
+> **Tip:** You can view these instructions anytime by running `umay completion`.
+
+---
+
 ## Usage & CLI Commands
 
 By default, UmayCrypt securely prompts for passwords using `getpass`. Passwords are never echoed to stdout or stored in history.

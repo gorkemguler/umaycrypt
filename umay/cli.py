@@ -1,3 +1,4 @@
+# PYTHON_ARGCOMPLETE_OK
 """
 UmayCrypt - Komut Satırı Arayüzü (CLI) Modülü
 
@@ -17,6 +18,9 @@ Kullanım Örnekleri:
 4. Metin Deşifre Etme:
    umay decrypt-text --input orhun_metni.umay
    umay decrypt-text --message "𐰉𐰥𐰊..."
+
+5. Tab Tamamlama (Tab Completion) Kurulumu:
+   umay completion --shell zsh
 """
 
 import sys
@@ -24,6 +28,12 @@ import os
 import argparse
 import getpass
 from typing import Optional
+
+try:
+    import argcomplete
+    HAS_ARGCOMPLETE = True
+except ImportError:
+    HAS_ARGCOMPLETE = False
 
 from umay.core import (
     encrypt_data,
@@ -253,6 +263,19 @@ def handle_decrypt_text(args: argparse.Namespace) -> int:
         return 1
 
 
+def handle_completion(args: argparse.Namespace) -> int:
+    """umay completion komutu işleyicisi - Tab tamamlama rehberi üretir."""
+    shell = (args.shell or "zsh").lower()
+    print(f"{COLOR_CYAN}⌨️  UmayCrypt Tab Tamamlama ({shell.upper()}) Kurulum Rehberi{COLOR_RESET}", file=sys.stderr)
+    print(f"{COLOR_YELLOW}------------------------------------------------------------{COLOR_RESET}", file=sys.stderr)
+    print(f"Terminalinizde Tab ile otomatik tamamlamayı aktif etmek için:\n", file=sys.stderr)
+    print(f"1. ~/.{shell}rc dosyanıza şu satırı ekleyin:", file=sys.stderr)
+    print(f"{COLOR_GREEN}   eval \"$(register-python-argcomplete umay)\"{COLOR_RESET}\n", file=sys.stderr)
+    print(f"2. Otomatik eklemek için terminalinizde çalıştırın:", file=sys.stderr)
+    print(f"{COLOR_GREEN}   echo 'eval \"$(register-python-argcomplete umay)\"' >> ~/.{shell}rc && source ~/.{shell}rc{COLOR_RESET}\n", file=sys.stderr)
+    return 0
+
+
 def main(argv: Optional[list[str]] = None) -> int:
     """CLI ana giriş noktası."""
     parser = argparse.ArgumentParser(
@@ -288,6 +311,13 @@ def main(argv: Optional[list[str]] = None) -> int:
     p_dec_text.add_argument("--message", "-m", help="Orhun metni dizgisi")
     p_dec_text.add_argument("--password", "-p", help="Deşifreleme parolası")
 
+    # 5. completion
+    p_comp = subparsers.add_parser("completion", help="Terminal Tab tamamlama kurulum rehberini gösterir")
+    p_comp.add_argument("--shell", "-s", choices=["zsh", "bash"], default="zsh", help="Kabuk tipi (zsh veya bash, varsayılan: zsh)")
+
+    if HAS_ARGCOMPLETE:
+        argcomplete.autocomplete(parser)
+
     args = parser.parse_args(argv)
 
     if not args.command:
@@ -303,6 +333,8 @@ def main(argv: Optional[list[str]] = None) -> int:
         return handle_encrypt_text(args)
     elif args.command == "decrypt-text":
         return handle_decrypt_text(args)
+    elif args.command == "completion":
+        return handle_completion(args)
 
     return 0
 

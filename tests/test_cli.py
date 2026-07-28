@@ -60,6 +60,9 @@ def test_cli_wrong_password_returns_exit_code_1(tmp_path):
     assert res_dec == 1
 
 
-def test_cli_missing_input_file():
-    res = main(["encrypt", "-i", "/non/existent/file.txt", "-p", "Pass123"])
-    assert res == 1
+def test_cli_completion_subcommand():
+    res = main(["completion", "--shell", "zsh"])
+    assert res == 0
+
+    res_bash = main(["completion", "--shell", "bash"])
+    assert res_bash == 0

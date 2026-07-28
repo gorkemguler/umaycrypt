@@ -110,6 +110,24 @@ pip install -e .
 
 ---
 
+## ⌨️ Tab Tamamlama (Tab Completion) Kurulumu
+
+Terminalinizde `umay` yazıp **Tab** tuşuna bastığınızda komutların (`encrypt`, `decrypt` vb.), parametrelerin ve dosya yollarının otomatik tamamlanmasını sağlayabilirsiniz:
+
+### macOS / zsh için (Tek Komutla Aktif Etme):
+```bash
+echo 'eval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
+```
+
+### bash için:
+```bash
+echo 'eval "$(register-python-argcomplete umay)"' >> ~/.bashrc && source ~/.bashrc
+```
+
+> **İpucu:** Kurulum rehberini dilediğiniz zaman `umay completion` komutuyla da görüntüleyebilirsiniz.
+
+---
+
 ## Kullanım ve CLI Komutları
 
 UmayCrypt varsayılan olarak parolayı `getpass` ile güvenli şekilde ister. Parola terminalde görüntülenmez ve geçmişe kaydedilmez.

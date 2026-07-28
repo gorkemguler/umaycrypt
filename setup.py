@@ -11,6 +11,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "cryptography>=49.0.0",
+        "argcomplete>=3.0.0",
     ],
     extras_require={
         "dev": ["pytest>=8.0.0"],
