@@ -88,15 +88,23 @@ flowchart TD
 
 ## 📦 Kurulum
 
+### macOS (Global / Homebrew Kurulumu):
 ```bash
 # Depoyu klonlayın
-git clone https://github.com/umaycrypt/umaycrypt.git
+git clone https://github.com/gorkemguler/umaycrypt.git
 cd umaycrypt
 
-# Gerekli bağımlılıkları yükleyin
-pip install -r requirements.txt
+# macOS terminalinde 'umay' komutunu aktif edin
+python3 -m pip install --break-system-packages -e .
 
-# Geliştirici modunda kurun (umay CLI komutunu aktif eder)
+# Test edin
+umay --help
+```
+
+### Sanal Ortam (venv) ile Kurulum:
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -e .
 ```
 

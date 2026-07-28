@@ -88,15 +88,23 @@ flowchart TD
 
 ## 📦 Installation
 
+### macOS (Global / Homebrew Installation):
 ```bash
 # Clone the repository
-git clone https://github.com/umaycrypt/umaycrypt.git
+git clone https://github.com/gorkemguler/umaycrypt.git
 cd umaycrypt
 
-# Install required dependencies
-pip install -r requirements.txt
+# Enable the 'umay' command directly on macOS terminal
+python3 -m pip install --break-system-packages -e .
 
-# Install package in editable mode (activates the umay CLI binary)
+# Test execution
+umay --help
+```
+
+### Virtual Environment (venv) Installation:
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -e .
 ```
 
