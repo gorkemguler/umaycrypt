@@ -116,7 +116,7 @@ You can enable auto-completion for `umay` subcommands (`encrypt`, `decrypt`, etc
 
 ### For macOS / zsh (One-Line Activation):
 ```bash
-echo 'eval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
+echo -e '\nautoload -U compinit && compinit -u\neval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
 ```
 
 ### For bash:

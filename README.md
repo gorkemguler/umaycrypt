@@ -116,7 +116,7 @@ Terminalinizde `umay` yazıp **Tab** tuşuna bastığınızda komutların (`encr
 
 ### macOS / zsh için (Tek Komutla Aktif Etme):
 ```bash
-echo 'eval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
+echo -e '\nautoload -U compinit && compinit -u\neval "$(register-python-argcomplete umay)"' >> ~/.zshrc && source ~/.zshrc
 ```
 
 ### bash için:
