@@ -2,7 +2,7 @@
 
   <img src="./assets/logo.png" alt="UmayCrypt Logo" width="280" style="border-radius: 12px; margin-bottom: 15px;" />
 
-  # UMAY ANA 𐰶𐰼𐰃𐰯𐱃𐰆
+$${\color{lightblue}\text{# UMAY ANA}\space\text{𐰶𐰼𐰃𐰯𐱃𐰆}}$$
   ### *UmayCrypt — Umay Ana'nın Koruması Altında Veri Şifreleme*
   `𐰆𐰢𐰖 𐰀𐰣𐰀 𐰶𐰼𐰃𐰯𐱃𐰆 — 𐰋𐰀𐰼𐰃 𐱁𐰃𐰯𐰼𐰀𐰞𐰀𐰢𐰀 𐰀𐰺𐰀𐰲𐰃`
 
@@ -66,7 +66,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Neden AES-256-GCM ve Argon2id?
+## Neden AES-256-GCM ve Argon2id?
 
 1. **AES-256-GCM (Authenticated Encryption):**
    - **Galois/Counter Mode (GCM)**, hem veri gizliliğini hem de bütünlüğünü (Integrity & Authenticity) aynı anda sağlar.
@@ -102,7 +102,7 @@ pip install -e .
 
 ---
 
-## 🚀 Kullanım ve CLI Komutları
+## Kullanım ve CLI Komutları
 
 UmayCrypt varsayılan olarak parolayı `getpass` ile güvenli şekilde ister. Parola terminalde görüntülenmez ve geçmişe kaydedilmez.
 
@@ -145,7 +145,7 @@ umay decrypt-text --message "𐰉𐰥𐰊𐰕𐰌𐰢𐰉..."
 
 ---
 
-## 🧪 Testlerin Çalıştırılması
+## Testlerin Çalıştırılması
 
 Tüm kriptografik işlevler, bozuk dosya senaryoları, yanlış parola durumları ve Orhun permütasyon doğrulamaları `pytest` ile test edilebilir:
 
