@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./assets/logo.png" alt="UmayCrypt Logo" width="280" style="border-radius: 12px; margin-bottom: 15px;" />
+  <img src="./assets/banner.png" alt="UmayCrypt Logo" width="280" style="border-radius: 12px; margin-bottom: 15px;" />
 
   # UMAY ANA 𐰶𐰼𐰃𐰯𐱃𐰆
   ### *UmayCrypt — Umay Ana'nın Koruması Altında Veri Şifreleme*
