@@ -280,3 +280,16 @@ pytest -v
 ## 📜 License
 
 This project is licensed under the **MIT License**.
+
+---
+
+## 📦 PyPI Package
+
+The UmayCrypt encryption core and security utilities are also available as an official Python library on PyPI:
+
+```bash
+pip install umay-crypto
+```
+
+For full documentation, interactive function security decorators (`@protect`), and in-memory encrypted script execution, visit the [umay-crypto PyPI Page](https://pypi.org/project/umay-crypto/).
+

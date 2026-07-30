@@ -280,3 +280,16 @@ pytest -v
 ## 📜 Lisans
 
 Bu proje **MIT Lisansı** altında sunulmaktadır.
+
+---
+
+## 📦 PyPI (Python Kütüphanesi)
+
+UmayCrypt şifreleme motoru ve güvenlik işlevleri PyPI üzerinde resmi bir Python kütüphanesi olarak yayınlanmıştır. Kendi projelerinizde doğrudan kullanmak için:
+
+```bash
+pip install umay-crypto
+```
+
+Fonksiyon koruma dekoratörü (`@protect`) ve RAM üzerinde şifreli kod çalıştırma özellikleri gibi detaylar için [umay-crypto PyPI Sayfasını](https://pypi.org/project/umay-crypto/) inceleyebilirsiniz.
+
